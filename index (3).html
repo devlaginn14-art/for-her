@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Month 💗</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffe9f0;--bg2:#ffd3e2;--card:#fff7fa;--ink:#5a2a3c;--soft:#a4607a;--pink:#ff6f9c;--butter:#fff0b3;--lilac:#d9c8ff;--line:#ffc2d6;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b1420;--bg2:#3a1b2b;--card:#3f2131;--ink:#ffe3ec;--soft:#e7a7bf;--pink:#ff7fa6;--butter:#6b5a2a;--lilac:#5a4a86;--line:#6a3550}}
+:root[data-theme="dark"]{--bg:#2b1420;--bg2:#3a1b2b;--card:#3f2131;--ink:#ffe3ec;--soft:#e7a7bf;--pink:#ff7fa6;--butter:#6b5a2a;--lilac:#5a4a86;--line:#6a3550}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:"Fredoka",system-ui,sans-serif;color:var(--ink);overflow-x:hidden;
+ background:radial-gradient(circle at 15% 8%,var(--bg2),transparent 45%),radial-gradient(circle at 90% 70%,var(--lilac),transparent 40%),var(--bg)}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.fl{position:absolute;bottom:-40px;animation:rise linear forwards;opacity:.8}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:28px 18px 56px;text-align:center}
+section{margin-top:54px}
+.beat{font-size:64px;display:inline-block;animation:beat 1.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+h1,h2{font-family:"Pacifico",cursive;font-weight:400;color:var(--pink);line-height:1.25;margin:6px 0 4px}
+h1{font-size:clamp(30px,8vw,48px)}h2{font-size:28px}
+.sub{margin:0 auto 20px;color:var(--soft);font-size:18px;max-width:30em}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tile{background:var(--card);border:3px solid var(--line);border-radius:28px;padding:14px 4px 10px;box-shadow:0 6px 0 var(--line)}
+.tile:nth-child(2){transform:rotate(-2deg)}.tile:nth-child(3){transform:rotate(1.5deg)}.tile:nth-child(4){transform:rotate(-1deg)}
+.num{font-size:clamp(30px,10vw,56px);font-weight:600;line-height:1;font-variant-numeric:tabular-nums;color:var(--pink)}
+.lab{font-size:15px;color:var(--soft);margin-top:4px}
+.bubble{background:var(--butter);border-radius:24px;padding:18px 20px;margin:14px auto;max-width:30em;font-size:19px;min-height:64px;display:flex;align-items:center;justify-content:center;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px;max-width:30em;margin:0 auto}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.grid button{font-size:16px;font-weight:500;aspect-ratio:1;border:0;border-radius:50%;background:var(--pink);color:#fff;transition:transform .15s}
+.grid button:hover{transform:scale(1.1)}
+.grid button[disabled]{background:var(--card);color:var(--soft);border:2px dashed var(--line);cursor:default}
+.env{display:block;width:100%;max-width:30em;margin:10px auto;background:var(--card);border:3px solid var(--line);border-radius:22px;padding:14px 18px;font-size:18px;font-weight:500;text-align:left;box-shadow:0 5px 0 var(--line)}
+.env .body{display:none;font-weight:400;margin-top:10px;color:var(--soft);line-height:1.5}
+.env.open .body{display:block}
+.story{display:grid;gap:18px;max-width:30em;margin:0 auto}
+.card{background:var(--card);border:3px solid var(--line);border-radius:28px;padding:14px;text-align:left}
+.card:nth-child(odd){transform:rotate(-1deg)}.card:nth-child(even){transform:rotate(1deg)}
+.ph{aspect-ratio:4/3;border-radius:18px;background:var(--lilac);display:flex;align-items:center;justify-content:center;font-size:48px;overflow:hidden;margin-bottom:10px}
+.ph img{width:100%;height:100%;object-fit:cover}
+.card b{color:var(--pink);font-size:19px}.card p{margin:4px 0 0;color:var(--soft)}
+#arena{position:relative;height:280px;max-width:30em;margin:12px auto;border:3px dashed var(--line);border-radius:28px;overflow:hidden;background:var(--card)}
+.h{position:absolute;top:-50px;border:0;background:none;font-size:36px;animation:fall linear forwards;padding:0}
+@keyframes fall{to{top:290px}}
+.go{border:0;background:var(--pink);color:#fff;font-size:20px;font-weight:600;padding:12px 28px;border-radius:999px;box-shadow:0 5px 0 rgba(0,0,0,.15)}
+.go:active{transform:translateY(3px);box-shadow:none}
+#final{display:none}
+.party #final{display:block}
+.letter{background:var(--butter);border-radius:28px;padding:24px 22px;max-width:32em;margin:14px auto;text-align:left;line-height:1.65;font-size:19px;white-space:pre-line}
+.foot{margin-top:50px;color:var(--soft)}
+@media (prefers-reduced-motion:reduce){.beat,.fl{animation:none}.fl{display:none}}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<main>
+ <div class="beat" aria-hidden="true">💗</div>
+ <h1 id="title"></h1>
+ <p class="sub" id="sub"></p>
+ <div class="tiles" role="timer">
+  <div class="tile"><div class="num" id="d">0</div><div class="lab">days</div></div>
+  <div class="tile"><div class="num" id="h">0</div><div class="lab">hours</div></div>
+  <div class="tile"><div class="num" id="m">0</div><div class="lab">minutes</div></div>
+  <div class="tile"><div class="num" id="s">0</div><div class="lab">seconds</div></div>
+ </div>
+
+ <section>
+  <h2>29 reasons I love you</h2>
+  <p class="sub" style="margin-bottom:0">A new heart unlocks every day. Tap one to read it.</p>
+  <div class="bubble" id="today"></div>
+  <div class="grid" id="grid"></div>
+ </section>
+
+ <section>
+  <h2>Open when…</h2>
+  <p class="sub">Little letters for the days I can't be there. Tap to open.</p>
+  <div id="letters"></div>
+ </section>
+
+ <section>
+  <h2>Our little story</h2>
+  <div class="story" id="story"></div>
+ </section>
+
+ <section>
+  <h2>Catch my heart 💘</h2>
+  <p class="sub">Tap as many hearts as you can in 15 seconds.</p>
+  <div id="arena"></div>
+  <button class="go" id="play">Play</button>
+  <div class="bubble" id="result" style="display:none"></div>
+ </section>
+
+ <section id="final">
+  <h2>Your birthday letter 🎂</h2>
+  <div class="letter" id="letter"></div>
+ </section>
+
+ <p class="foot">Made with love, from far away but always close 💌</p>
+</main>
+<script>
+/* ✏️ EDIT EVERYTHING IN THIS BLOCK TO MAKE IT YOURS */
+const NAME = "My Love";
+const FROM = "Utkarsh";
+const BDAY = new Date(2026, 9, 29, 0, 0, 0);
+
+const REASONS = [
+ "Your smile makes my whole day better.","You listen like what I say really matters.","Your laugh is my favourite sound.",
+ "You believe in me even when I doubt myself.","You make ordinary days feel special.","The way you care about the little things.",
+ "You're the first person I want to tell everything to.","Distance is nothing because of you.","Your kindness, always.",
+ "You make me want to be better.","The silly jokes only we understand.","You're so strong and don't even realise it.",
+ "Talking to you feels like home.","Your voice notes are my comfort.","You're beautiful inside and out.",
+ "You make waiting worth it.","The way you get excited about small things.","You're my favourite hello.",
+ "You're my calm after a long day.","Your hugs are something I can't wait for.","You make me laugh when I'm stressed.",
+ "You're patient with me, always.","You are my best friend.","Every plan I make has you in it.",
+ "You turn my bad days around.","You're my favourite person, full stop.","I'm proud of you, every day.",
+ "You make this distance feel short.","Happy birthday! You are my favourite reason to smile."
+];
+
+const LETTERS = [
+ ["Open when you miss me 🥺","Close your eyes and think of my hug, because I'm thinking of yours right now. Every day apart is one day closer to the next time we're together. Until then, I'm only a call away."],
+ ["Open when you're sad 🫂","Hey. Breathe. Whatever happened today, you're stronger than it. I'm so proud of you and I'm always on your side. Call me, and we'll talk or just stay on the line in silence."],
+ ["Open when you can't sleep 🌙","Look at the same moon I'm looking at. Think of something that makes you smile, like me being silly. Goodnight, sleep well, I'll be in your dreams."],
+ ["Open when you're angry with me 😅","I'm sorry, okay? I love you more than I love being right. Come here (virtually), and let me make it up to you."],
+ ["Open when you need a laugh 😂","Remember that time we laughed so much we couldn't breathe? Write your own inside joke here. 😂"]
+];
+
+const STORY = [
+ ["The day we met","Write the memory here: where we were, what we said, what I felt.","photos/1.jpg","🌸"],
+ ["Our first date","Write something about our first date here.","photos/2.jpg","🍓"],
+ ["A day I'll never forget","Write a favourite memory here.","photos/3.jpg","🎀"],
+ ["Us, this year","Write something about how this year has been with you.","photos/4.jpg","💖"]
+];
+
+const FINAL = "Happy Birthday, " + NAME + "! 🎂\n\nWrite your real birthday letter here. Tell her what she means to you, what you love about being with her, what you're grateful for this year, and what you're looking forward to together.\n\nI love you, always.\n— " + FROM;
+/* END OF EDIT BLOCK */
+
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2, "0");
+const PREVIEW = new URLSearchParams(location.search).has("preview"); // add ?preview=1 to the link to test birthday mode
+const EM = ["💗","🌸","✨","🎀","💖","🍓","🎈"];
+
+function unlocked(now){
+  if (PREVIEW) return 29;
+  if (now.getFullYear() === 2026 && now.getMonth() === 9) return Math.min(now.getDate(), 29);
+  return now >= BDAY ? 29 : 0;
+}
+function isBday(now){ return PREVIEW || now >= BDAY; }
+
+function build(){
+  const u = unlocked(new Date()), g = $("grid");
+  REASONS.forEach((r, i) => {
+    const b = document.createElement("button");
+    b.textContent = i + 1;
+    if (i >= u){ b.disabled = true; b.title = "Unlocks on " + (i + 1) + " Oct"; }
+    else b.onclick = () => $("today").textContent = r;
+    g.appendChild(b);
+  });
+  $("today").textContent = u ? REASONS[u - 1] : "Your first heart unlocks on 1 October 💕";
+
+  LETTERS.forEach(([t, b]) => {
+    const e = document.createElement("button");
+    e.className = "env"; e.setAttribute("aria-expanded", "false");
+    const s = document.createElement("span"), d = document.createElement("div");
+    s.textContent = "💌 " + t; d.className = "body"; d.textContent = b;
+    e.append(s, d);
+    e.onclick = () => { const o = e.classList.toggle("open"); e.setAttribute("aria-expanded", o); };
+    $("letters").appendChild(e);
+  });
+
+  STORY.forEach(([t, p, img, em]) => {
+    const c = document.createElement("div");
+    c.className = "card";
+    const ph = document.createElement("div"); ph.className = "ph"; ph.textContent = em;
+    const im = new Image(); im.alt = t; im.src = img;
+    im.onload = () => { ph.textContent = ""; ph.appendChild(im); };
+    const b = document.createElement("b"); b.textContent = t;
+    const pp = document.createElement("p"); pp.textContent = p;
+    c.append(ph, b, pp);
+    $("story").appendChild(c);
+  });
+  $("letter").textContent = FINAL;
+}
+
+function tick(){
+  const now = new Date(), diff = BDAY - now;
+  if (isBday(now)){
+    document.body.classList.add("party");
+    $("title").textContent = "Happy Birthday, " + NAME + "! 🎂";
+    $("sub").textContent = "Today is all about you. Scroll down, there's a letter waiting. — " + FROM;
+    ["d","h","m","s"].forEach(k => $(k).textContent = "0");
+    return;
+  }
+  $("title").textContent = "Counting down to your day, " + NAME;
+  $("sub").textContent = "Every second is one step closer to celebrating you.";
+  const s = Math.floor(diff / 1000);
+  $("d").textContent = Math.floor(s / 86400);
+  $("h").textContent = pad(Math.floor(s % 86400 / 3600));
+  $("m").textContent = pad(Math.floor(s % 3600 / 60));
+  $("s").textContent = pad(s % 60);
+}
+
+function float(){
+  const e = document.createElement("span");
+  e.className = "fl"; e.textContent = EM[Math.floor(Math.random() * EM.length)];
+  e.style.left = Math.random() * 100 + "vw";
+  e.style.fontSize = 16 + Math.random() * 22 + "px";
+  e.style.animationDuration = 7 + Math.random() * 7 + "s";
+  $("sky").appendChild(e);
+  setTimeout(() => e.remove(), 15000);
+}
+
+let score = 0, timers = [];
+function play(){
+  score = 0; $("result").style.display = "none"; $("play").disabled = true;
+  const a = $("arena"); a.innerHTML = "";
+  const sp = setInterval(() => {
+    const h = document.createElement("button");
+    h.className = "h"; h.textContent = EM[Math.floor(Math.random() * 3)] === "✨" ? "💘" : "💗";
+    h.setAttribute("aria-label", "heart");
+    h.style.left = Math.random() * 85 + "%";
+    h.style.animationDuration = 2.2 + Math.random() * 1.5 + "s";
+    h.onclick = () => { score++; h.remove(); };
+    h.onanimationend = () => h.remove();
+    a.appendChild(h);
+  }, 550);
+  setTimeout(() => {
+    clearInterval(sp); a.innerHTML = ""; $("play").disabled = false; $("play").textContent = "Play again";
+    const r = $("result"); r.style.display = "flex";
+    r.textContent = "You caught " + score + " hearts! 🥰 But you caught mine a long time ago. 💗";
+  }, 15000);
+}
+
+build(); tick();
+$("play").onclick = play;
+setInterval(tick, 1000);
+setInterval(() => { float(); if (document.body.classList.contains("party")) { float(); float(); } }, 900);
+</script>
+</body>
+</html>
