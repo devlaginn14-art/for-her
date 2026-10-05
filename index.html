@@ -44,7 +44,7 @@ button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 .card{background:var(--card);border:3px solid var(--line);border-radius:28px;padding:14px;text-align:left}
 .card:nth-child(odd){transform:rotate(-1deg)}.card:nth-child(even){transform:rotate(1deg)}
 .ph{aspect-ratio:4/3;border-radius:18px;background:var(--lilac);display:flex;align-items:center;justify-content:center;font-size:48px;overflow:hidden;margin-bottom:10px}
-.ph img{width:100%;height:100%;object-fit:cover}
+.ph img{width:100%;height:auto;max-height:780px;object-fit:cover;object-position:center 30%;display:block}
 .card b{color:var(--pink);font-size:19px}.card p{margin:4px 0 0;color:var(--soft)}
 #arena{position:relative;height:280px;max-width:30em;margin:12px auto;border:3px dashed var(--line);border-radius:28px;overflow:hidden;background:var(--card)}
 .h{position:absolute;top:-50px;border:0;background:none;font-size:36px;animation:fall linear forwards;padding:0}
@@ -55,11 +55,27 @@ button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 .party #final{display:block}
 .letter{background:var(--butter);border-radius:28px;padding:24px 22px;max-width:32em;margin:14px auto;text-align:left;line-height:1.65;font-size:19px;white-space:pre-line}
 .foot{margin-top:50px;color:var(--soft)}
-@media (prefers-reduced-motion:reduce){.beat,.fl{animation:none}.fl{display:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+#gate{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .6s;
+ background:radial-gradient(circle at 20% 15%,var(--bg2),transparent 50%),radial-gradient(circle at 85% 85%,var(--lilac),transparent 45%),var(--bg)}
+#gate.gone{opacity:0;pointer-events:none}
+.gift{font-size:92px;background:none;border:0;animation:beat 1.4s ease-in-out infinite;padding:0}
+#gate p{font-family:"Pacifico",cursive;font-size:26px;color:var(--pink);margin:14px 0 0;line-height:1.4}
+#mus{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;display:none;width:48px;height:48px;border-radius:50%;border:3px solid var(--line);background:var(--card);font-size:22px}
+.cake{display:inline-block;cursor:pointer;margin-top:8px}
+.cd{font-size:34px;letter-spacing:6px;animation:beat 1s ease-in-out infinite}
+.ck{font-size:110px;line-height:1}
+.cake.out .cd{animation:none}.cake.out .cd{visibility:hidden}
+.sp{position:fixed;pointer-events:none;z-index:60;font-size:22px;animation:sp .8s forwards}
+@keyframes sp{to{transform:translateY(-34px) scale(1.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.beat,.fl,.gift,.cd{animation:none}.fl{display:none}.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 <div id="sky" aria-hidden="true"></div>
+<div id="gate"><div><button class="gift" id="open" aria-label="Open your surprise">🎁</button><p id="gt"></p></div></div>
+<audio id="bg" src="music.mp3" loop preload="none"></audio>
+<button id="mus" aria-label="Toggle music">🎵</button>
 <main>
  <div class="beat" aria-hidden="true">💗</div>
  <h1 id="title"></h1>
@@ -85,7 +101,8 @@ button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
  </section>
 
  <section>
-  <h2>Our little story</h2>
+  <h2>My favourite view 📸</h2>
+  <p class="sub">Just you, and all the little reasons I can't stop smiling when I look at you.</p>
   <div class="story" id="story"></div>
  </section>
 
@@ -98,8 +115,17 @@ button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
  </section>
 
  <section id="final">
-  <h2>Your birthday letter 🎂</h2>
+  <h2>Make a wish 🎂</h2>
+  <div class="cake" id="cake" role="button" tabindex="0" aria-label="Blow out the candles"><div class="cd">🔥 🔥 🔥</div><div class="ck">🎂</div></div>
+  <p class="sub" id="wish">Tap the cake to blow out the candles</p>
+  <h2 style="margin-top:34px">Your birthday letter 💌</h2>
   <div class="letter" id="letter"></div>
+ </section>
+
+ <section id="reply">
+  <h2>Tell me something 🤗</h2>
+  <p class="sub">Tap one and it opens a chat with me.</p>
+  <div id="wa"></div>
  </section>
 
  <p class="foot">Made with love, from far away but always close 💌</p>
@@ -109,6 +135,8 @@ button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 const NAME = "My Love";
 const FROM = "Utkarsh";
 const BDAY = new Date(2026, 9, 29, 0, 0, 0);
+const PHONE = "91XXXXXXXXXX"; // your WhatsApp number with country code, no + or spaces
+const REPLIES = ["🤗 Sending you a big virtual hug","💗 I miss you too","😤 I'm still a little angry, call me"];
 
 const REASONS = [
  "Your smile makes my whole day better.","You listen like what I say really matters.","Your laugh is my favourite sound.",
@@ -132,10 +160,12 @@ const LETTERS = [
 ];
 
 const STORY = [
- ["The day we met","Write the memory here: where we were, what we said, what I felt.","photos/1.jpg","🌸"],
- ["Our first date","Write something about our first date here.","photos/2.jpg","🍓"],
- ["A day I'll never forget","Write a favourite memory here.","photos/3.jpg","🎀"],
- ["Us, this year","Write something about how this year has been with you.","photos/4.jpg","💖"]
+ ["My little panda 🐼","Even with panda stickers all over your cheeks, you're still the cutest thing on my screen.","photos/1.jpeg","🐼"],
+ ["Bows and blushes 🎀","Those little bows, that shy smile... how am I supposed to focus on anything else?","photos/2.jpeg","🎀"],
+ ["Mood: irresistible ❤️","That pout, your hand on your cheek, that deep red... you're a whole vibe and you know it.","photos/3.jpeg","❤️"],
+ ["Pretty in pink 💖","Even the hearts floating around you know how lovable you are.","photos/4.jpeg","💖"],
+ ["Simply stunning 🌼","That mustard kurta, the braid with the yellow scrunchie, that side glance... so simple, so beautiful.","photos/5.jpeg","🌼"],
+ ["Golden hour glow ☀️","The sunlight caught your face and your earrings, and I swear even the sun was jealous of you.","photos/6.jpeg","☀️"]
 ];
 
 const FINAL = "Happy Birthday, " + NAME + "! 🎂\n\nWrite your real birthday letter here. Tell her what she means to you, what you love about being with her, what you're grateful for this year, and what you're looking forward to together.\n\nI love you, always.\n— " + FROM;
@@ -179,7 +209,7 @@ function build(){
     c.className = "card";
     const ph = document.createElement("div"); ph.className = "ph"; ph.textContent = em;
     const im = new Image(); im.alt = t; im.src = img;
-    im.onload = () => { ph.textContent = ""; ph.appendChild(im); };
+    im.onload = () => { ph.textContent = ""; ph.style.aspectRatio = "auto"; ph.appendChild(im); };
     const b = document.createElement("b"); b.textContent = t;
     const pp = document.createElement("p"); pp.textContent = p;
     c.append(ph, b, pp);
@@ -239,6 +269,43 @@ function play(){
 
 build(); tick();
 $("play").onclick = play;
+
+// gift gate + music
+$("gt").textContent = isBday(new Date()) ? "It's your day, " + NAME + "! Tap to open 🎁" : "A little something for you, " + NAME + ". Tap to open 💗";
+$("open").onclick = () => {
+  $("gate").classList.add("gone");
+  for (let i = 0; i < 40; i++) setTimeout(float, i * 40);
+  const a = $("bg"); a.load();
+  a.play().then(() => { $("mus").style.display = "block"; }).catch(() => {});
+};
+$("mus").onclick = () => { const a = $("bg"); if (a.paused){ a.play(); $("mus").textContent = "🎵"; } else { a.pause(); $("mus").textContent = "🔇"; } };
+
+// blow the candles
+const blow = () => { $("cake").classList.add("out"); $("wish").textContent = "Make a wish 🌟 and keep it a secret!"; for (let i = 0; i < 60; i++) setTimeout(float, i * 35); };
+$("cake").onclick = blow;
+$("cake").onkeydown = e => { if (e.key === "Enter" || e.key === " ") blow(); };
+
+// WhatsApp replies
+if (PHONE.includes("X")) $("reply").style.display = "none";
+else REPLIES.forEach(t => {
+  const a = document.createElement("a");
+  a.className = "env"; a.style.textDecoration = "none"; a.style.color = "inherit";
+  a.textContent = t; a.target = "_blank"; a.rel = "noopener";
+  a.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(t);
+  $("wa").appendChild(a);
+});
+
+// scroll reveal
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll("section").forEach(x => { x.classList.add("rv"); io.observe(x); });
+
+// sparkle on tap
+document.addEventListener("pointerdown", e => {
+  const x = document.createElement("span");
+  x.className = "sp"; x.textContent = "✨";
+  x.style.left = e.clientX - 10 + "px"; x.style.top = e.clientY - 10 + "px";
+  document.body.appendChild(x); setTimeout(() => x.remove(), 800);
+});
 setInterval(tick, 1000);
 setInterval(() => { float(); if (document.body.classList.contains("party")) { float(); float(); } }, 900);
 </script>
