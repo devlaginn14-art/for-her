@@ -139,29 +139,48 @@ const PHONE = "91XXXXXXXXXX"; // your WhatsApp number with country code, no + or
 const REPLIES = ["🤗 Sending you a big virtual hug","💗 I miss you too","😤 I'm still a little angry, call me"];
 
 const REASONS = [
- "Your smile makes my whole day better.","You listen like what I say really matters.","Your laugh is my favourite sound.",
- "You believe in me even when I doubt myself.","You make ordinary days feel special.","The way you care about the little things.",
- "You're the first person I want to tell everything to.","Distance is nothing because of you.","Your kindness, always.",
- "You make me want to be better.","The silly jokes only we understand.","You're so strong and don't even realise it.",
- "Talking to you feels like home.","Your voice notes are my comfort.","You're beautiful inside and out.",
- "You make waiting worth it.","The way you get excited about small things.","You're my favourite hello.",
- "You're my calm after a long day.","Your hugs are something I can't wait for.","You make me laugh when I'm stressed.",
- "You're patient with me, always.","You are my best friend.","Every plan I make has you in it.",
- "You turn my bad days around.","You're my favourite person, full stop.","I'm proud of you, every day.",
- "You make this distance feel short.","Happy birthday! You are my favourite reason to smile."
+  "Tumhari smile mein pata nahi kya magic hai, mera mood kitna bhi kharab ho, tumhe smile karte dekh ke automatically sab thoda better lagne lagta hai.",
+  "Tumhare hugs mein ek alag hi comfort hai. Tumhe gale lagate hi aisa lagta hai jaise duniya ki saari tension thodi der ke liye gayab ho gayi.",
+  "Mujhe tumhari laugh bahut zyada pasand hai, especially jab meri wajah se tum hasti ho. Kabhi-kabhi main jaan-bujhkar stupid ban jaata hoon, bas tumhari woh cute si laugh sunne ke liye.",
+  "Tum jis tarah se chhoti-chhoti cheezon mein bhi doosron ka khayal rakhti ho, woh mujhe tumhare baare mein sabse zyada achha lagta hai. Tumhara dil genuinely bahut beautiful hai.",
+  "Mujhe sabse zyada achha ye lagta hai ki bina mere kuch properly explain kiye bhi tum samajh jaati ho ki mere dimaag mein kya chal raha hai. Tumhara mujhe itna deeply samajhna mere liye bahut special hai.",
+  "I know main kabhi-kabhi annoying ho sakta hoon, overthink karta hoon aur bina wajah tumhe pareshaan bhi karta hoon, but tum phir bhi patiently mujhe handle karti ho. I genuinely appreciate that.",
+  "Main tumhari voice hours tak sun sakta hoon, chahe tum kisi important topic pe baat kar rahi ho ya literally bakwaas kar rahi ho. Tumhari voice mein ek alag sa comfort hai jo mujhe instantly calm kar deta hai.",
+  "Tumhare saath ek ajeeb sa comfort feel hota hai. Mujhe har baar kuch bolna ya explain karna zaroori nahi lagta. Kabhi-kabhi bas tumhara mere paas hona hi enough hota hai.",
+  "Mujhe humari sirf big memories hi nahi, balki woh chhoti-chhoti random cheezein bhi bahut pasand hain. Random conversations, stupid jokes aur bina kisi reason ke hasna hi toh humari story ko humari banata hai.",
+  "Tum jis easily mujhe hasa deti ho na, I absolutely love that. Main kitna bhi serious banne ki koshish karun, tum kuch na kuch karke mere face pe smile le hi aati ho.",
+  "Mujhe tumhare saath fake banne ki zarurat nahi padti. Main jaisa hoon, waisa tumhare saamne reh sakta hoon, aur ye feeling mere liye bahut precious hai.",
+  "Jab tum mere side mein hoti ho na, difficult cheezein bhi thodi easy lagne lagti hain. Jab main khud pe doubt karta hoon aur tum bolti ho 'tu kar lega', genuinely lagta hai ki haan, kar lenge.",
+  "Tum jis tarah se apna pyaar show karti ho na, mujhe woh bahut precious lagta hai. Kabhi hug, kabhi random message, kabhi bas tumhara mujhe dekhna — chhoti cheezein hain, but they make me feel really loved.",
+  "Mere liye ye feeling bahut special hai ki main tum par genuinely depend kar sakta hoon. Life mein bahut log aate-jaate hain, but knowing that you choose to stay beside me means so much to me.",
+  "Tumhara haath pakadna, tumhara mujhe hug karna, ya bas casually mujhe touch karna — I don't know how you do it, but it instantly makes me feel better. Tumhara touch somehow feels like home.",
+  "Tumhara woh side jo tum har kisi ko nahi dikhati, mujhe bahut special lagta hai. Jab tum apne fears, insecurities ya feelings mere saath share karti ho, I feel lucky ki tum mujh par itna trust karti ho.",
+  "Mujhe tumhare dreams sunna bahut achha lagta hai. Tum life mein kya karna chahti ho aur kya achieve karna chahti ho, sab sunke mujhe genuinely excitement hoti hai. I hope tumhare bahut saare future moments mein main bhi saath rahun.",
+  "Tum jo little efforts humare liye karti ho na, I notice them. Shayad main har baar bol nahi paata, but they really matter to me. Pyaar kabhi-kabhi kisi ke chhote se effort mein bhi dikh jaata hai.",
+  "Tum meri chhoti-chhoti baatein yaad rakhti ho, even woh cheezein jo mujhe khud yaad nahi rehti. Har baar jab tum aisa karti ho, mujhe feel hota hai ki someone really notices me.",
+  "Mera dimaag jab unnecessary overthinking ki Olympics khel raha hota hai na, tum somehow mujhe calm kar deti ho. Tumhari ek simple si reassurance bhi kabhi-kabhi meri poori thinking change kar deti hai.",
+  "Tum jitni strong ho na, shayad tum khud bhi realize nahi karti. Maine tumhe difficult situations handle karte dekha hai, aur honestly mujhe tum par bahut proud feel hota hai.",
+  "Mujhe tumhara soft side bahut pasand hai. Tum jis tarah care karti ho, emotional hoti ho aur deeply love karti ho, there's something so beautiful about it. Tumhari softness tumhari weakness nahi, tumhari beauty hai.",
+  "Girlfriend hone se pehle tum meri favourite person aur meri friend ho. Main tumse serious baatein bhi kar sakta hoon aur literally stupidest nonsense bhi. Tumhe kuch bhi random batane ka mann karna is one of my favourite things about us.",
+  "Tumhare saath mujhe perfect hone ka pressure nahi feel hota. Main confused, tired, emotional ya kabhi stupid bhi ho sakta hoon, but deep down I know ki tum phir bhi mujhe accept karogi.",
+  "Kabhi-kabhi tum mujh par mujhse zyada believe karti ho. Jab main khud doubt kar raha hota hoon aur tum mujhe yaad dilati ho ki main kya kar sakta hoon, it genuinely pushes me forward.",
+  "Honestly, humari kuch favourite memories shayad duniya ko bilkul stupid lagen. Random jokes, bakwaas conversations, ek dusre ko tease karna aur bina reason ke hasna. But mere liye wahi moments sabse precious hain, because they're ours.",
+  "Mujhe hamesha tumhari zarurat kisi particular reason ke liye nahi hoti. Kabhi-kabhi bas tumhara hona hi enough hai. Tum kuch na bhi bolo, bas tum paas ho toh somehow sab thoda better lagta hai.",
+  "Mujhe humari woh memories bhi exciting lagti hain jo abhi bani hi nahi hain. Saath mein places discover karna, random plans banana, naye experiences, naye fights aur naye laughs — I genuinely hope I get to experience a lot of it with you.",
+  "29 din se main tumhe alag-alag reasons bata raha hoon ki mujhe tumse itna pyaar kyun hai, but honestly koi ek reason hai hi nahi. Tumhari smile, tumhara pagalpan, tumhari softness, tumhari flaws, tumhari habits, tumhara heart — mujhe tumhari har cheez se pyaar hai. Pata nahi yaar, bas tum woh ho, aur mujhe tumse bahut zyada pyaar hai. ❤️"
 ];
 
 const LETTERS = [
  ["Open when you miss me 🥺","Close your eyes and think of my hug, because I'm thinking of yours right now. Every day apart is one day closer to the next time we're together. Until then, I'm only a call away."],
- ["Open when you're sad 🫂","Hey. Breathe. Whatever happened today, you're stronger than it. I'm so proud of you and I'm always on your side. Call me, and we'll talk or just stay on the line in silence."],
+ ["Open when you're sad 🫂","Hey. Breathe. Whatever happened today, you're stronger than it. I'm so proud of you and I'm always on your side. Call me, and we'll talk and be all loveyy doveyyy."],
  ["Open when you can't sleep 🌙","Look at the same moon I'm looking at. Think of something that makes you smile, like me being silly. Goodnight, sleep well, I'll be in your dreams."],
  ["Open when you're angry with me 😅","I'm sorry, okay? I love you more than I love being right. Come here (virtually), and let me make it up to you."],
- ["Open when you need a laugh 😂","Remember that time we laughed so much we couldn't breathe? Write your own inside joke here. 😂"]
+ ["Open when you need a laugh 😂","Hamke CALL kari babyyyyyyyyyyyy 😂"]
 ];
 
 const STORY = [
- ["My little panda 🐼","Even with panda stickers all over your cheeks, you're still the cutest thing on my screen.","./photos/1.jpeg","🐼"],
- ["Bows and blushes 🎀","Those little bows, that shy smile... how am I supposed to focus on anything else?","./photos/2.jpeg","🎀"],
+ ["My little panda 🐼","We both the story behind this pic and would never forget it😘.","./photos/1.jpeg","🐼"],
+ ["Bows and blushes 🎀","Those little bows, that shy(devil) smile... how am I supposed to focus on anything else?","./photos/2.jpeg","🎀"],
  ["Mood: irresistible ❤️","That pout, your hand on your cheek, that deep red... you're a whole vibe and you know it.","./photos/3.jpeg","❤️"],
  ["Pretty in pink 💖","Even the hearts floating around you know how lovable you are.","./photos/4.jpeg","💖"],
  ["Simply stunning 🌼","That mustard kurta, the braid with the yellow scrunchie, that side glance... so simple, so beautiful.","./photos/5.jpeg","🌼"],
