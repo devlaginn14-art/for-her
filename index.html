@@ -139,35 +139,63 @@ const PHONE = "91XXXXXXXXXX"; // your WhatsApp number with country code, no + or
 const REPLIES = ["🤗 Sending you a big virtual hug","💗 I miss you too","😤 I'm still a little angry, call me"];
 
 const REASONS = [
-  "Tumhari smile mein pata nahi kya magic hai, mera mood kitna bhi kharab ho, tumhe smile karte dekh ke automatically sab thoda better lagne lagta hai.",
-  "Tumhare hugs mein ek alag hi comfort hai. Tumhe gale lagate hi aisa lagta hai jaise duniya ki saari tension thodi der ke liye gayab ho gayi.",
-  "Mujhe tumhari laugh bahut zyada pasand hai, especially jab meri wajah se tum hasti ho. Kabhi-kabhi main jaan-bujhkar stupid ban jaata hoon, bas tumhari woh cute si laugh sunne ke liye.",
-  "Tum jis tarah se chhoti-chhoti cheezon mein bhi doosron ka khayal rakhti ho, woh mujhe tumhare baare mein sabse zyada achha lagta hai. Tumhara dil genuinely bahut beautiful hai.",
-  "Mujhe sabse zyada achha ye lagta hai ki bina mere kuch properly explain kiye bhi tum samajh jaati ho ki mere dimaag mein kya chal raha hai. Tumhara mujhe itna deeply samajhna mere liye bahut special hai.",
-  "I know main kabhi-kabhi annoying ho sakta hoon, overthink karta hoon aur bina wajah tumhe pareshaan bhi karta hoon, but tum phir bhi patiently mujhe handle karti ho. I genuinely appreciate that.",
-  "Main tumhari voice hours tak sun sakta hoon, chahe tum kisi important topic pe baat kar rahi ho ya literally bakwaas kar rahi ho. Tumhari voice mein ek alag sa comfort hai jo mujhe instantly calm kar deta hai.",
-  "Tumhare saath ek ajeeb sa comfort feel hota hai. Mujhe har baar kuch bolna ya explain karna zaroori nahi lagta. Kabhi-kabhi bas tumhara mere paas hona hi enough hota hai.",
-  "Mujhe humari sirf big memories hi nahi, balki woh chhoti-chhoti random cheezein bhi bahut pasand hain. Random conversations, stupid jokes aur bina kisi reason ke hasna hi toh humari story ko humari banata hai.",
-  "Tum jis easily mujhe hasa deti ho na, I absolutely love that. Main kitna bhi serious banne ki koshish karun, tum kuch na kuch karke mere face pe smile le hi aati ho.",
-  "Mujhe tumhare saath fake banne ki zarurat nahi padti. Main jaisa hoon, waisa tumhare saamne reh sakta hoon, aur ye feeling mere liye bahut precious hai.",
-  "Jab tum mere side mein hoti ho na, difficult cheezein bhi thodi easy lagne lagti hain. Jab main khud pe doubt karta hoon aur tum bolti ho 'tu kar lega', genuinely lagta hai ki haan, kar lenge.",
-  "Tum jis tarah se apna pyaar show karti ho na, mujhe woh bahut precious lagta hai. Kabhi hug, kabhi random message, kabhi bas tumhara mujhe dekhna — chhoti cheezein hain, but they make me feel really loved.",
-  "Mere liye ye feeling bahut special hai ki main tum par genuinely depend kar sakta hoon. Life mein bahut log aate-jaate hain, but knowing that you choose to stay beside me means so much to me.",
-  "Tumhara haath pakadna, tumhara mujhe hug karna, ya bas casually mujhe touch karna — I don't know how you do it, but it instantly makes me feel better. Tumhara touch somehow feels like home.",
-  "Tumhara woh side jo tum har kisi ko nahi dikhati, mujhe bahut special lagta hai. Jab tum apne fears, insecurities ya feelings mere saath share karti ho, I feel lucky ki tum mujh par itna trust karti ho.",
-  "Mujhe tumhare dreams sunna bahut achha lagta hai. Tum life mein kya karna chahti ho aur kya achieve karna chahti ho, sab sunke mujhe genuinely excitement hoti hai. I hope tumhare bahut saare future moments mein main bhi saath rahun.",
-  "Tum jo little efforts humare liye karti ho na, I notice them. Shayad main har baar bol nahi paata, but they really matter to me. Pyaar kabhi-kabhi kisi ke chhote se effort mein bhi dikh jaata hai.",
-  "Tum meri chhoti-chhoti baatein yaad rakhti ho, even woh cheezein jo mujhe khud yaad nahi rehti. Har baar jab tum aisa karti ho, mujhe feel hota hai ki someone really notices me.",
-  "Mera dimaag jab unnecessary overthinking ki Olympics khel raha hota hai na, tum somehow mujhe calm kar deti ho. Tumhari ek simple si reassurance bhi kabhi-kabhi meri poori thinking change kar deti hai.",
-  "Tum jitni strong ho na, shayad tum khud bhi realize nahi karti. Maine tumhe difficult situations handle karte dekha hai, aur honestly mujhe tum par bahut proud feel hota hai.",
-  "Mujhe tumhara soft side bahut pasand hai. Tum jis tarah care karti ho, emotional hoti ho aur deeply love karti ho, there's something so beautiful about it. Tumhari softness tumhari weakness nahi, tumhari beauty hai.",
-  "Girlfriend hone se pehle tum meri favourite person aur meri friend ho. Main tumse serious baatein bhi kar sakta hoon aur literally stupidest nonsense bhi. Tumhe kuch bhi random batane ka mann karna is one of my favourite things about us.",
-  "Tumhare saath mujhe perfect hone ka pressure nahi feel hota. Main confused, tired, emotional ya kabhi stupid bhi ho sakta hoon, but deep down I know ki tum phir bhi mujhe accept karogi.",
-  "Kabhi-kabhi tum mujh par mujhse zyada believe karti ho. Jab main khud doubt kar raha hota hoon aur tum mujhe yaad dilati ho ki main kya kar sakta hoon, it genuinely pushes me forward.",
-  "Honestly, humari kuch favourite memories shayad duniya ko bilkul stupid lagen. Random jokes, bakwaas conversations, ek dusre ko tease karna aur bina reason ke hasna. But mere liye wahi moments sabse precious hain, because they're ours.",
-  "Mujhe hamesha tumhari zarurat kisi particular reason ke liye nahi hoti. Kabhi-kabhi bas tumhara hona hi enough hai. Tum kuch na bhi bolo, bas tum paas ho toh somehow sab thoda better lagta hai.",
-  "Mujhe humari woh memories bhi exciting lagti hain jo abhi bani hi nahi hain. Saath mein places discover karna, random plans banana, naye experiences, naye fights aur naye laughs — I genuinely hope I get to experience a lot of it with you.",
-  "29 din se main tumhe alag-alag reasons bata raha hoon ki mujhe tumse itna pyaar kyun hai, but honestly koi ek reason hai hi nahi. Tumhari smile, tumhara pagalpan, tumhari softness, tumhari flaws, tumhari habits, tumhara heart — mujhe tumhari har cheez se pyaar hai. Pata nahi yaar, bas tum woh ho, aur mujhe tumse bahut zyada pyaar hai. ❤️"
+  "Your smile has this unfair little power over me. No matter how my day is going, seeing you smile somehow makes everything feel a little lighter. I could honestly spend forever trying to make you smile just so I can see it again.",
+
+  "There’s something about your hugs that makes the rest of the world disappear for a while. Whenever I’m in your arms, I feel like I’m exactly where I’m supposed to be.",
+
+  "I love your laugh more than you probably realize. And honestly, knowing that I can sometimes be the reason behind that laugh is one of my favourite feelings in the world.",
+
+  "The way you care about people, even in the smallest things, makes me admire you so much. You have such a genuinely kind heart, and I feel incredibly lucky that I get to experience that side of you.",
+
+  "I love how you understand me even when I don't know how to explain what I’m feeling. Sometimes you just get me, and that feeling of being understood by you means more than I can put into words.",
+
+  "I know I can sometimes be difficult, overthink things, or annoy you a little more than necessary. Yet you still have patience with me, and I hope you know how much I appreciate that.",
+
+  "I could listen to you talk about absolutely nothing and still enjoy every second of it. There’s just something about your voice that feels comforting to me, especially when I’ve had a bad day.",
+
+  "You have this beautiful way of making me feel okay without necessarily having to fix anything. Sometimes just knowing that you’re there is enough to make everything feel a little less heavy.",
+
+  "It’s not only the big things I love about us. It’s the random conversations, silly jokes, small updates, comfortable silence, and those tiny moments that probably mean nothing to anyone else but mean everything to me.",
+
+  "I love how easily you can make me laugh. Even when I’m trying to stay serious, somehow you manage to bring out that stupid smile on my face.",
+
+  "I love that I can be real with you. You don't make me feel like I have to pretend to be perfect, and I hope you always know that you can be completely yourself with me too.",
+
+  "Having you beside me makes difficult things feel a little easier. You believing in me, especially when I’m doubting myself, gives me a kind of strength that I don’t think you even realize you give me.",
+
+  "I love all the little ways you show me that you care. Sometimes it’s a hug, sometimes a message, sometimes just the way you look at me—and somehow all those little things make me feel incredibly loved.",
+
+  "Knowing that you’re someone I can count on means so much to me. In a world where things can change so quickly, having someone who chooses to stay and stand beside me is something I’ll never take for granted.",
+
+  "There’s something ridiculously comforting about even the smallest touch from you. Holding your hand, a little hug, or just being close to you can instantly make me feel happier.",
+
+  "I love the side of you that you don't show to everyone. Every time you trust me enough to share your fears, thoughts, or softer moments, I feel even closer to you.",
+
+  "I love hearing you talk about the things you want from life. Your dreams make me excited not just to see where you go, but to hopefully be somewhere beside you while you get there.",
+
+  "It’s the effort you put into us that makes me feel special. Even the little things you do, especially the things you probably think I don't notice, stay with me more than you know.",
+
+  "You have this way of remembering little things about me that I sometimes forget myself. It makes me feel seen, and being seen by someone you love is such a beautiful feeling.",
+
+  "Whenever my mind starts overthinking everything, you somehow know how to bring me back to reality. Your reassurance has become one of those little comforts I never knew I needed until I had you.",
+
+  "I admire how strong you are, even during the moments when you don't feel strong yourself. Watching you handle difficult days and still keep going makes me incredibly proud of you.",
+
+  "I love your soft side—the way you care, the way you get emotional, the way you love so deeply. There’s something incredibly beautiful about seeing the tenderness in you.",
+
+  "Before anything else, I love that you're my person. I can talk to you, joke with you, annoy you, tell you random things, and just be myself around you—and that's one of the best parts of loving you.",
+
+  "With you, I don't feel like I have to constantly have everything figured out. I can be confused, tired, emotional, or completely stupid sometimes, and still know that I'm loved.",
+
+  "Sometimes you believe in me more than I believe in myself. And every time you remind me that I’m capable of more, it makes me want to become the person you already see in me.",
+
+  "Some of my favourite memories with you are probably the stupidest ones. The random jokes, teasing, nonsense conversations and moments where we're both laughing for no reason are the memories I know I'll want to keep forever.",
+
+  "I don't always need you to say something or do something. Sometimes just having you around is enough. Your presence itself has become one of my favourite comforts.",
+
+  "I love thinking about all the things we haven't experienced yet. There are still so many places to go, things to try, memories to make and ordinary days to share—and I genuinely can't wait for more of them with you.",
+
+  "After all these reasons, I think I've realized something: I don't love you because of just one thing. I love your smile, your craziness, your softness, your flaws, your heart, your little habits, and every version of you in between. I just love you for being you—and somehow, that's my favourite reason of all. ❤️"
 ];
 
 const LETTERS = [
